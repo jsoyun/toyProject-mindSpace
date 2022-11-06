@@ -1,2 +1,3 @@
 # toyProject-mindSpace
-Welcome, 
+Welcome, Put your heart here.
+Let's chill.
