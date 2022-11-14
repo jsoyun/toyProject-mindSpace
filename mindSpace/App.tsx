@@ -1,120 +1,87 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React from 'react';
+import { View, Text, Image, ScrollView, TextInput } from 'react-native';
+import { Table, Row, Rows } from 'react-native-table-component';
 
-import React, {type PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section: React.FC<
-  PropsWithChildren<{
-    title: string;
-  }>
-> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const header = ['heading 1', 'heading 2', 'heading 3']
+    const data = [
+        ['gfg1', 'gfg2', 'gfg3'],
+        ['gfg4', 'gfg5', 'gfg6'],
+        ['gfg7', 'gfg8', 'gfg9']
+  
+    ]
+
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    <ScrollView>
+      <Text>jpeg가 안되네~!~!~</Text>
+      <Text>Some more text</Text>
+      <View style={{backgroundColor:'#0067a3',flexDirection: 'row'}}>
+        
+        <View style={{flex: 1}}>
+        <Image source={require('../mindSpace/assets/images/지성셀카1.jpg')}  style={{width:200, height:200, borderRadius:100,  borderWidth: 2, borderColor: 'red', } } />
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+          </View>
+          <View style={{flex: 1}}>
+          <Image source={require('../mindSpace/assets/images/지성말풍선.jpg')}  style={{width:200, height:200,borderRadius:100, borderWidth: 2, borderColor: 'red',}} />
+
+          </View>
+
+    
+      
+
+
+   
+
+      </View>
+      <View>
+<Image source={require('../mindSpace/assets/images/지성셀카2.jpg')}  style={{width:200, height:200,borderRadius:100}} />
+        <Image source={require('../mindSpace/assets/images/지성셀카3.jpg')}  style={{width:200, height:200,borderRadius:100}} />
+
+      </View>
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1
+        }}
+
+        placeholder='리덕스로 저장해야쥐~~'
+      />
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+    
+        }}
+        placeholder='그다음에 디비 써야쥐'
+      />
+         <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1
+        }}
+        placeholder='뭐할고야??'
+      />
+
+<View style={{ marginTop: 200 ,borderWidth: 2, borderColor: 'red'}}>
+            <Text style={{ fontSize: 18,}}>
+                GeeksforGeeks React Native Table</Text>
+            <Table borderStyle={{ borderWidth: 2, 
+                borderColor: '#c8e1ff' }}>
+             <Row data={header} style={{borderWidth: 2, borderColor: 'red'}}/>
+                <Rows data={data} />
+            </Table>
+        </View>
+
+
+
+    </ScrollView>
+  );
+}
 
 export default App;
